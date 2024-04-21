@@ -1,5 +1,5 @@
 let mouseX = 0, mouseY = 0, imgX = window.innerWidth / 2, imgY = window.innerHeight / 2, lastX = window.innerWidth / 2;
-let lastDirection = 1; // 초기 방향을 오른쪽으로 설정
+let lastDirection = 1;
 const img = document.getElementById('follow-img');
 const waveContainer = document.getElementById('wave-effect');
 let lastWaveTime = 0;
@@ -7,7 +7,6 @@ let lastWaveTime = 0;
 document.addEventListener('mousemove', function(e) {
     mouseX = e.pageX;
     mouseY = e.pageY;
-    console.log('Mouse moved to:', mouseX, mouseY); // 마우스 위치 로그 출력
 
     if (mouseX !== lastX) {
         lastDirection = mouseX > lastX ? 1 : -1;
@@ -29,3 +28,19 @@ function followMouse() {
 }
 
 followMouse();
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const images = [
+        '/static/puff/1.png',
+        '/static/puff/2.png',
+        '/static/puff/3.png',
+        '/static/puff/4.png',
+    ];
+    const fishImage = document.getElementById('follow-img');
+
+    fishImage.addEventListener('click', function() {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        fishImage.src = images[randomIndex];
+    });
+});
