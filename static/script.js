@@ -34,8 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const images = [
         '/static/puff/1.png',
         '/static/puff/2.png',
-        '/static/puff/3.png',
-        '/static/puff/4.png',
     ];
     const fishImage = document.getElementById('follow-img');
 
